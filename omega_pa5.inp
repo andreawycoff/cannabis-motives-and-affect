@@ -1,0 +1,52 @@
+DATA:
+FILE IS mplus_pa.csv;
+VARIABLE:
+NAMES ARE id exc act ale hap ent;
+CLUSTER = id;
+ANALYSIS:
+TYPE=TWOLEVEL;
+MODEL:
+%WITHIN%
+paw BY exc* (WL1)
+ act (WL2)
+ ale (WL3)
+ hap (WL4)
+ ent (WL5);
+paw@1;
+exc (WR1);
+act (WR2);
+ale (WR3);
+hap (WR4);
+ent (WR5);
+
+%BETWEEN%
+pab BY exc* (BL1)
+ act (BL2)
+ ale (BL3)
+ hap (BL4)
+ ent (BL5);
+pab@1;
+exc (BR1);
+act (BR2);
+ale (BR3);
+hap (BR4);
+ent (BR5);
+
+OUTPUT: SAMPSTAT;
+
+MODEL CONSTRAINT: NEW(NUMW DENOMW OMEGAW HW NUMB DENOMB OMEGAB HB);
+NUMW = (WL1+WL2+WL3+WL4+WL5)**2;
+DENOMW = ((WL1+WL2+WL3+WL4+WL5)**2)+(WR1+WR2+WR3+WR4+WR5);
+OMEGAW = NUMW/DENOMW;
+HW = 1/(1+(1/((WL1**2/WR1)+(WL2**2/WR2)+(WL3**2/WR3)+(WL4**2/WR4)+(WL5**2/WR5))));
+NUMB = (BL1+BL2+BL3+BL4+BL5)**2;
+DENOMB = ((BL1+BL2+BL3+BL4+BL5)**2)+(BR1+BR2+BR3+BR4+BR5);
+OMEGAB = NUMB/DENOMB;
+HB = 1/(1+(1/((BL1**2/BR1)+(BL2**2/BR2)+(BL3**2/BR3)+(BL4**2/BR4)+(BL5**2/BR5))));
+WR1 > 0; BR1 > 0;
+WR2 > 0; BR2 > 0;
+WR3 > 0; BR3 > 0;
+WR4 > 0; BR4 > 0;
+WR5 > 0; BR5 > 0;
+
+

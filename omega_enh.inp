@@ -1,0 +1,47 @@
+DATA:
+FILE IS mplus_enh.csv;
+VARIABLE:
+NAMES ARE id cm_feel cm_fun cm_ple cm_high;
+CLUSTER = id;
+ANALYSIS:
+TYPE=TWOLEVEL;
+MODEL:
+%WITHIN%
+sadnw BY cm_feel* (WL1)
+ cm_fun (WL2)
+ cm_ple (WL3)
+ cm_high (WL4);
+sadnw@1;
+cm_feel (WR1);
+cm_fun (WR2);
+cm_ple (WR3);
+cm_high (WR4);
+
+%BETWEEN%
+sadnb BY cm_feel* (BL1)
+ cm_fun (BL2)
+ cm_ple (BL3)
+ cm_high (BL4);
+sadnb@1;
+cm_feel (BR1);
+cm_fun (BR2);
+cm_ple (BR3);
+cm_high (BR4);
+
+OUTPUT: SAMPSTAT;
+
+MODEL CONSTRAINT: NEW(NUMW DENOMW OMEGAW HW NUMB DENOMB OMEGAB HB);
+NUMW = (WL1+WL2+WL3+WL4)**2;
+DENOMW = ((WL1+WL2+WL3+WL4)**2)+(WR1+WR2+WR3+WR4);
+OMEGAW = NUMW/DENOMW;
+HW = 1/(1+(1/((WL1**2/WR1)+(WL2**2/WR2)+(WL3**2/WR3)+(WL4**2/WR4))));
+NUMB = (BL1+BL2+BL3+BL4)**2;
+DENOMB = ((BL1+BL2+BL3+BL4)**2)+(BR1+BR2+BR3+BR4);
+OMEGAB = NUMB/DENOMB;
+HB = 1/(1+(1/((BL1**2/BR1)+(BL2**2/BR2)+(BL3**2/BR3)+(BL4**2/BR4))));
+WR1 > 0; BR1 > 0;
+WR2 > 0; BR2 > 0;
+WR3 > 0; BR3 > 0;
+WR4 > 0; BR4 > 0;
+
+

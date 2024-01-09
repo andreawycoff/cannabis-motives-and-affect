@@ -1,0 +1,93 @@
+DATA:
+FILE IS mplus_na.csv;
+VARIABLE:
+NAMES ARE id sco dow alo ang sha ner blu jit hos sad loa afr;
+CLUSTER = id;
+ANALYSIS:
+TYPE=TWOLEVEL;
+MODEL:
+%WITHIN%
+paw BY sco* (WL1)
+ dow (WL2)
+ alo (WL3)
+ ang (WL4)
+ sha (WL5)
+ ner (WL6)
+ blu (WL7)
+ jit (WL8)
+ hos (WL9)
+ sad (WL10)
+ loa (WL11)
+ afr (WL12);
+paw@1;
+sco (WR1);
+dow (WR2);
+alo (WR3);
+ang (WR4);
+sha (WR5);
+ner (WR6);
+blu (WR7);
+jit (WR8);
+hos (WR9);
+sad (WR10);
+loa (WR11);
+afr (WR12);
+
+%BETWEEN%
+pab BY sco* (BL1)
+ dow (BL2)
+ alo (BL3)
+ ang (BL4)
+ sha (BL5)
+ ner (BL6)
+ blu (BL7)
+ jit (BL8)
+ hos (BL9)
+ sad (BL10)
+ loa (BL11)
+ afr (BL12);
+pab@1;
+sco (BR1);
+dow (BR2);
+alo (BR3);
+ang (BR4);
+sha (BR5);
+ner (BR6);
+blu (BR7);
+jit (BR8);
+hos (BR9);
+sad (BR10);
+loa (BR11);
+afr (BR12);
+
+OUTPUT: SAMPSTAT;
+
+MODEL CONSTRAINT: NEW(NUMW DENOMW OMEGAW HW NUMB DENOMB OMEGAB HB);
+NUMW = (WL1+WL2+WL3+WL4+WL5+WL6+WL7+WL8+WL9+WL10+WL11+WL12)**2;
+DENOMW = ((WL1+WL2+WL3+WL4+WL5+WL6+WL7+WL8+WL9+WL10+WL11+WL12)**2)+
+  (WR1+WR2+WR3+WR4+WR5+WR6+WR7+WR8+WR9+WR10+WR11+WR12);
+OMEGAW = NUMW/DENOMW;
+HW = 1/(1+(1/((WL1**2/WR1)+(WL2**2/WR2)+(WL3**2/WR3)+(WL4**2/WR4)+
+  (WL5**2/WR5)+(WL6**2/WR6)+(WL7**2/WR7)+(WL8**2/WR8)+(WL9**2/WR9)+
+  (WL10**2/WR10)+(WL11**2/WR11)+(WL12**2/WR12))));
+NUMB = (BL1+BL2+BL3+BL4+BL5+BL6+BL7+BL8+BL9+BL10+BL11+BL12)**2;
+DENOMB = ((BL1+BL2+BL3+BL4+BL5+BL6+BL7+BL8+BL9+BL10+BL11+BL12)**2)+
+  (BR1+BR2+BR3+BR4+BR5+BR6+BR7+BR8+BR9+BR10+BR11+BR12);
+OMEGAB = NUMB/DENOMB;
+HB = 1/(1+(1/((BL1**2/BR1)+(BL2**2/BR2)+(BL3**2/BR3)+(BL4**2/BR4)+
+  (BL5**2/BR5)+(BL6**2/BR6)+(BL7**2/BR7)+(BL8**2/BR8)+(BL9**2/BR9)+
+  (BL10**2/BR10)+(BL11**2/BR11)+(BL12**2/BR12))));
+WR1 > 0; BR1 > 0;
+WR2 > 0; BR2 > 0;
+WR3 > 0; BR3 > 0;
+WR4 > 0; BR4 > 0;
+WR5 > 0; BR5 > 0;
+WR6 > 0; BR6 > 0;
+WR7 > 0; BR7 > 0;
+WR8 > 0; BR8 > 0;
+WR9 > 0; BR9 > 0;
+WR10 > 0; BR10 > 0;
+WR11 > 0; BR11 > 0;
+WR12 > 0; BR12 > 0;
+
+
