@@ -1,0 +1,38 @@
+          The Mixed Procedure           
+           Model Information            
+
+Item                               Value
+-------------------------  -------------
+Dependent Variable                    pa
+Estimation Method                     ML
+Covariance Structure                  VC
+Degrees of Freedom Method  Satterthwaite
+Number of Observations                36
+
+Covariance Parameter Estimates
+
+Cov Parm   Subject   Estimate
+---------  --------  --------
+Intercept  id          0.1527
+Residual               0.1915
+
+         Fit Statistics          
+
+Statistic                   Value
+-----------------------  --------
+-2 Res Log Likelihood     52.8200
+AIC (Smaller is Better)   58.8200
+BIC (Smaller is Better)   63.5706
+
+                   Solution for Fixed Effects                    
+
+Effect     Estimate  Standard Error        DF   t Value  Pr > |t|
+---------  --------  --------------  --------  --------  --------
+Intercept    2.4129          0.1786         .     13.51    <.0001
+
+Tests of Covariance Parameters Based on the Restricted Likelihood
+
+Label          -2 Res Log Like        DF  Chi-Square  Pr > ChiSq
+-------------  ---------------  --------  ----------  ----------
+Intercept = 0          52.8200         1     17.5000      <.0001
+Residual = 0           52.8200         1     17.5000      <.0001

@@ -1,0 +1,7 @@
+{
+  "bundle": "t006_proc_standard_pseudobetas",
+  "source_file": "dataprep and analysis code 20240703.sas",
+  "source_blob_sha": "b87c354676d59138cc78b3e4d699df3630a66859",
+  "source_commit": "1e857d701535d42a9fe2f95ef91fd8ab6fa636e6",
+  "notes": "Author's R&R standardization to report pseudo-standardized betas: after change scores and person-mean centering, PROC STANDARD MEAN=0 STD=1 rescales the momentary predictors, confirmed by a PROC MEANS showing every variable at mean 0, std 1. Library load swapped for the inlined 6-person, 90-row sample."
+}

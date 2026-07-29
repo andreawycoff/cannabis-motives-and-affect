@@ -1,0 +1,19 @@
+{
+  "_captured_at": "2026-07-29T12:39:12.269847+00:00",
+  "_captured_run_id": "r_5a17aed862af479491d331019b29c4d9",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote personmeans (6 rows, 7 columns).",
+    "NOTE: Wrote samplemeans (1 rows, 7 columns).",
+    "NOTE: PROC PRINT completed: 6 observations printed, 7 variables"
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

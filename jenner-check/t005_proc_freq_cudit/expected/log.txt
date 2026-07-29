@@ -1,0 +1,23 @@
+NOTE: Option OBS changed to 100.
+NOTE: DATA baseline
+
+NOTE: Processing inline DATALINES (6 lines)
+
+NOTE: Read 6 rows from DATALINES.
+NOTE: Wrote baseline (6 rows, 5 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=baseline
+
+NOTE: Read 6 rows from baseline.
+NOTE: Wrote baseline (6 rows, 5 columns).
+NOTE: PROC SORT statement used.
+NOTE: PROC MEANS
+NOTE: Output dataset cuditmean has 6 observations and 4 variables.
+NOTE: PROC MEANS statement used.
+NOTE: PROC MEANS
+NOTE: PROC MEANS statement used.
+NOTE: PROC FREQ
+NOTE: ODS plot written: freq_cudit.spec.json
+NOTE: PROC FREQ statement used.
