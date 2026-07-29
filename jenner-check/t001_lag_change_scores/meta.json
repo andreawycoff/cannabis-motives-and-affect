@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_lag_change_scores",
+  "source_file": "dataprep and analysis code 20240703.sas",
+  "source_blob_sha": "b87c354676d59138cc78b3e4d699df3630a66859",
+  "source_commit": "1e857d701535d42a9fe2f95ef91fd8ab6fa636e6",
+  "notes": "Author's momentary change-score prep: LAG(pa)/LAG(na) reset at first.studyday, dpa/dna differences, then drop non-use (mjyn) moments. Library load swapped for an inlined 6-person, 90-row excerpt of cannabis_motives_affect_dataset.csv; a closing PROC MEANS summarizes the resulting change scores."
+}

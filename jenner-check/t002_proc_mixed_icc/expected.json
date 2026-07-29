@@ -1,0 +1,20 @@
+{
+  "_captured_at": "2026-07-29T12:38:17.216858+00:00",
+  "_captured_run_id": "r_fbf5c5cac0944a1bb4c18f08744543f0",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote data (36 rows, 41 columns).",
+    "NOTE: Estimation method: ML (reml=False)",
+    "NOTE: Formula: pa ~ 1",
+    "NOTE: Group variable: id"
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

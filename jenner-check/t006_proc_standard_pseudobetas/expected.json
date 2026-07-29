@@ -1,0 +1,19 @@
+{
+  "_captured_at": "2026-07-29T12:57:41.105866+00:00",
+  "_captured_run_id": "r_31c42dd3ec97405f9afb7450eb8355f3",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote personmeans (6 rows, 3 columns).",
+    "NOTE: PROC STANDARD data=data",
+    "NOTE: PROC MEANS statement used."
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

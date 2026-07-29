@@ -1,0 +1,53 @@
+NOTE: Option OBS changed to 100.
+NOTE: DATA cannabis_data
+
+NOTE: Processing inline DATALINES (90 lines)
+
+NOTE: Read 90 rows from DATALINES.
+NOTE: Wrote cannabis_data (90 rows, 41 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA baseline
+
+NOTE: Processing inline DATALINES (6 lines)
+
+NOTE: Read 6 rows from DATALINES.
+NOTE: Wrote baseline (6 rows, 4 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA data
+
+
+NOTE: Read 90 rows from cannabis_data.
+NOTE: Wrote data (36 rows, 41 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=data
+
+NOTE: Read 36 rows from data.
+NOTE: Wrote data (36 rows, 41 columns).
+NOTE: PROC SORT statement used.
+NOTE: PROC SORT data=baseline
+
+NOTE: Read 6 rows from baseline.
+NOTE: Wrote baseline (6 rows, 4 columns).
+NOTE: PROC SORT statement used.
+NOTE: DATA data
+
+NOTE: Stream 1 processed 36 rows, max BY-group size: 10 (O(1) memory verified)
+NOTE: Stream 2 processed 6 rows, max BY-group size: 1 (O(1) memory verified)
+
+NOTE: Wrote data (36 rows, 44 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC MEANS
+NOTE: Output dataset table2descs has 6 observations and 10 variables.
+NOTE: PROC MEANS statement used.
+NOTE: PROC CORR data=table2descs
+
+NOTE: ODS plot written: corr_heatmap.spec.json
+NOTE: PROC CORR ODS Graphics generated.

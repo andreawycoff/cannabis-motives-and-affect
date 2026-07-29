@@ -1,0 +1,7 @@
+{
+  "bundle": "t004_proc_corr_table2",
+  "source_file": "dataprep and analysis code 20240703.sas",
+  "source_blob_sha": "b87c354676d59138cc78b3e4d699df3630a66859",
+  "source_commit": "1e857d701535d42a9fe2f95ef91fd8ab6fa636e6",
+  "notes": "Author's Table 2 person-level descriptive correlations: merge baseline measures onto the momentary data by id, BY-id PROC MEANS to person means, then PROC CORR over pa/na/enhance/cope/cmmq_enjoy/cmmq_cope/cudit. Library load and PROC IMPORT of the baseline CSV swapped for inlined excerpts of both CSVs (6 persons)."
+}

@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_proc_means_personmeans",
+  "source_file": "dataprep and analysis code 20240703.sas",
+  "source_blob_sha": "b87c354676d59138cc78b3e4d699df3630a66859",
+  "source_commit": "1e857d701535d42a9fe2f95ef91fd8ab6fa636e6",
+  "notes": "Author's two-level centering prep: BY-id PROC MEANS with OUTPUT OUT= MEAN=/AUTONAME to build person means, then a second PROC MEANS to the grand sample means, dropping the automatic _TYPE_/_FREQ_ columns. Library load swapped for the inlined 6-person, 90-row sample; two PROC PRINTs show the aggregated datasets."
+}

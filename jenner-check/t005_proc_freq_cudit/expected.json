@@ -1,0 +1,19 @@
+{
+  "_captured_at": "2026-07-29T12:56:46.055368+00:00",
+  "_captured_run_id": "r_c738720ae1704dcda24c836a92b6629e",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Output dataset cuditmean has 6 observations and 4 variables.",
+    "NOTE: PROC FREQ statement used.",
+    "NOTE: PROC MEANS statement used."
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}
